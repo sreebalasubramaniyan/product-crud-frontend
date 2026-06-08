@@ -20,7 +20,7 @@ function App() {
   const fetchProducts = () => {
     setProductsLoading(true)
     const token = localStorage.getItem("token")
-    fetch("http://localhost:3000/api/products", {
+    fetch("https://product-crud-backend-4xq6.onrender.com/api/products", {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -89,8 +89,8 @@ function App() {
 
     try {
       const url = editingProduct
-        ? `http://localhost:3000/api/products/${editingProduct._id}`
-        : 'http://localhost:3000/api/products'
+        ? `https://product-crud-backend-4xq6.onrender.com/api/products/${editingProduct._id}`
+        : 'https://product-crud-backend-4xq6.onrender.com/api/products'
 
       const res = await fetch(url, {
         method: editingProduct ? 'PUT' : 'POST',
@@ -116,7 +116,7 @@ function App() {
     const token = localStorage.getItem("token")
 
     try {
-      await fetch(`http://localhost:3000/api/products/${id}`, {
+      await fetch(`https://product-crud-backend-4xq6.onrender.com/api/products/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       })
