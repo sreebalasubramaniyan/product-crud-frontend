@@ -653,6 +653,145 @@ body {
   .product-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Auth mobile */
+  .auth-wrapper {
+    padding: 16px;
+  }
+
+  .auth-container {
+    padding: 24px 20px;
+  }
+
+  .auth-container h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* Modal mobile */
+  .modal {
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-form {
+    padding: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+
+  /* Product card mobile */
+  .product-card {
+    margin-bottom: 16px;
+  }
+
+  .product-actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .product-actions button {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  /* Header mobile */
+  .header-right {
+    gap: 12px;
+  }
+
+  .btn-logout {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  /* Loading mobile */
+  .loading, .empty {
+    padding: 60px 20px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .main-header {
+    padding: 10px 12px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .logo span {
+    font-size: 16px;
+  }
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .app-container {
+    padding: 16px 12px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .auth-container {
+    padding: 20px 16px;
+  }
+
+  .auth-container h2 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .btn-submit {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .product-name {
+    font-size: 18px;
+  }
+
+  .product-description {
+    font-size: 13px;
+  }
+
+  .product-quantity {
+    font-size: 13px;
+  }
+
+  .error-message, .success-message {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
 }
 
 /* Product Image */
