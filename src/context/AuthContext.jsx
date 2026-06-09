@@ -87,8 +87,26 @@ export const AuthProvider = ({ children }) => {
     setUser(null)
   }
 
+  // Login with token (used by Google OAuth)
+  const loginWithToken = async (token) => {
+    localStorage.setItem("token", token)
+    try {
+      const res = await fetch("https://product-crud-backend-4xq6.onrender.com/api/auth/me", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      if (res.ok) {
+        const userData = await res.json()
+        setUser(userData)
+        return userData
+      }
+    } catch (error) {
+      console.error(error)
+    }
+    return null
+  }
+
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, loading, authLoading }}>
+    <AuthContext.Provider value={{ user, login, register, logout, loading, authLoading, loginWithToken }}>
       {children}
     </AuthContext.Provider>
   )
