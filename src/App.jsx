@@ -5,7 +5,7 @@ import Register from './components/Register.jsx'
 import './App.css'
 
 function App() {
-  const { user, logout, loading } = useAuth()
+  const { user, logout, loading, login } = useAuth()
   const [products, setProducts] = useState([])
   const [productsLoading, setProductsLoading] = useState(false)
   const [submitLoading, setSubmitLoading] = useState(false)
@@ -16,6 +16,18 @@ function App() {
   const [imageFile, setImageFile] = useState(null)
   const [imagePreview, setImagePreview] = useState(null)
   const [showLogin, setShowLogin] = useState(true)
+
+  // Handle Google OAuth callback token
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const token = params.get('token')
+
+    if (token) {
+      login(token)
+      // Clean URL
+      window.history.replaceState({}, '', '/')
+    }
+  }, [])
 
   const fetchProducts = () => {
     setProductsLoading(true)
