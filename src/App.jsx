@@ -23,7 +23,7 @@ function App() {
     const token = params.get('token')
 
     if (token) {
-      login(token)
+      login(null, null, token) // Pass token as third argument
       // Clean URL
       window.history.replaceState({}, '', '/')
     }
