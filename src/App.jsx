@@ -19,14 +19,7 @@ function App() {
 
   // Handle Google OAuth callback token
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const token = params.get('token')
-
-    if (token) {
-      login(null, null, token) // Pass token as third argument
-      // Clean URL
-      window.history.replaceState({}, '', '/')
-    }
+    // No Google OAuth anymore
   }, [])
 
   const fetchProducts = () => {

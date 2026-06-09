@@ -40,30 +40,8 @@ export const AuthProvider = ({ children }) => {
     setLoading(false)
   }
 
-  const login = async (email, password, token) => {
+  const login = async (email, password) => {
     setAuthLoading(true)
-
-    // If token is passed directly (from Google OAuth), use it
-    if (token) {
-      localStorage.setItem("token", token)
-      try {
-        const res = await fetch("https://product-crud-backend-4xq6.onrender.com/api/auth/me", {
-          headers: { Authorization: `Bearer ${token}` }
-        })
-        if (res.ok) {
-          const userData = await res.json()
-          setUser(userData)
-          setAuthLoading(false)
-          return userData
-        }
-      } catch (error) {
-        console.error(error)
-      }
-      setAuthLoading(false)
-      return
-    }
-
-    // Otherwise, do regular email/password login
     const res = await fetch("https://product-crud-backend-4xq6.onrender.com/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

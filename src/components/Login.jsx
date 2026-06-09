@@ -9,10 +9,6 @@ function Login() {
   const [success, setSuccess] = useState(false)
   const { login, authLoading } = useAuth()
 
-  const handleGoogleLogin = () => {
-    window.location.href = "https://product-crud-backend-4xq6.onrender.com/api/auth/google";
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError("")
@@ -84,23 +80,6 @@ function Login() {
           )}
         </button>
       </form>
-
-      <div className="divider">
-        <span>or</span>
-      </div>
-
-      <button
-        type="button"
-        className="btn-google"
-        onClick={handleGoogleLogin}
-      >
-        <img
-          src="https://www.google.com/favicon.ico"
-          alt="Google"
-          className="google-icon"
-        />
-        Sign in with Google
-      </button>
     </div>
   )
 }
